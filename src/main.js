@@ -7,13 +7,12 @@ import "@aws-amplify/ui-vue";
 import Amplify from "aws-amplify";
 import awsconfig from "./aws-exports";
 import Vuelidate from 'vuelidate'
-import { Auth } from '@aws-amplify/auth'
 
 Amplify.configure(awsconfig);
 
-Auth.configure(awsconfig)
 Vue.config.productionTip = false
-Vue.use(Vuelidate)
+Vue.use(Vuelidate);
+
 new Vue({
   router,
   store,

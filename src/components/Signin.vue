@@ -1,5 +1,4 @@
 <template>
-  
 <div id="app">
     <v-app>
         <v-dialog v-model="dialog" persistent max-width="600px" min-width="360px">
@@ -26,7 +25,7 @@
                                         </v-col>
                                         <v-spacer></v-spacer>
                                          <v-col class="d-flex" cols="12" sm="3" xsm="12" align-end>
-                                            <v-btn x-large block :disabled="!valid" color="error" @click="cancel"> Cancel </v-btn>
+                                            <v-btn x-large block  color="error" @click="cancel"> Cancel </v-btn>
                                         </v-col>
                                     </v-row>
                                 </v-form>
@@ -36,7 +35,7 @@
                     <v-tab-item>
                         <v-card class="px-4">
                             <v-card-text>
-                                <v-form ref="registerForm" v-model="valid" lazy-validation>
+                                <v-form ref="registerForm" v-model="valid" lazy-validation v-if="isValid">
                                     <v-row>
                                         <v-col cols="12" sm="6" md="6">
                                             <v-text-field v-model="firstName" :rules="[rules.required]" label="First Name" maxlength="20" required></v-text-field>
@@ -58,10 +57,30 @@
                                         </v-col>
                                         <v-spacer></v-spacer>
                                          <v-col class="d-flex" cols="12" sm="3" xsm="12" align-end>
-                                            <v-btn x-large block :disabled="!valid" color="error" @click="cancel"> Cancel </v-btn>
+                                            <v-btn x-large block  color="error" @click="cancel"> Cancel </v-btn>
                                         </v-col>
                                     </v-row>
                                 </v-form>
+
+
+                                            <v-form ref="validateCode" v-model="valid" lazy-validation v-if="!isValid">
+                                    <v-row>
+                                        <v-col cols="12" sm="6" md="6">
+                                            <v-text-field v-model="code" label="Code" maxlength="20" required></v-text-field>
+                                        </v-col>
+                                        <v-spacer></v-spacer>
+                                         <v-col class="d-flex" cols="12" sm="3" xsm="12" align-end>
+                                            <v-btn x-large block :disabled="!valid" color="primary" @click="submit"> Submit </v-btn>
+                                        </v-col>
+                                           <v-col class="d-flex" cols="12" sm="3" xsm="12" align-end>
+                                            <v-btn x-large block  color="warning" @click="resendConfirmationCode"> Resend Code </v-btn>
+                                        </v-col>
+                                    </v-row>
+                                </v-form>
+                                        <v-spacer></v-spacer>
+
+
+
                             </v-card-text>
                         </v-card>
                     </v-tab-item>
@@ -69,6 +88,8 @@
             </div>
    
         </v-dialog>
+  
+
 
     </v-app>
 </div>
@@ -87,13 +108,24 @@ export default {
     async validate() {
         if (this.$refs.loginForm.validate()) {
              try {
-                await Auth.signIn(this.email, this.password);
+                await Auth.signIn(this.loginEmail, this.loginPassword);
                 router.push({ name: "Body" });
 
     } catch (error) {
-        alert(error.message);
+       this.message = error.message;
+        this.isShow = true;
       }          
      }
+    },
+    async  resendConfirmationCode() {
+    try {
+        await Auth.resendSignUp(this.email);
+         this.message ='code resent successfully';
+         this.isShow = true;
+    } catch (err) {
+        this.message = err.message;
+         this.isShow = true;
+    }
     },
       
     cancel(){
@@ -103,16 +135,36 @@ export default {
     async register() {
       if (this.$refs.registerForm.validate()){
           try {
-              await Auth.signUp({
+            const {dataUser}  =  await Auth.signUp({
                   username: this.email,
                   password: this.password,
+                  attributes: {
+                     email: this.email
+                  },
+                   response: { 
+              autoVerifyEmail: true
+              },
               });
-              alert('User successfully registered.');
+              this.dataUser = dataUser;
+              console.log(this.dataUser);
+              //alert('User successfully registered.');
+              this.isValid=false;
           } catch (error) {
-              alert(error.message);
+              this.message = error.message;
+               this.isShow = true;
           }
     }
-},
+    },
+      async submit() {
+          try {
+            await Auth.confirmSignUp(this.email, this.code);
+            router.push({ name: "Body" });
+          } catch (error) {
+             this.message = error.message;
+             this.isShow = true;
+          }
+      },
+
   },
   data: () => ({
     dialog: true,
@@ -122,12 +174,18 @@ export default {
         {name:"Register", icon:"mdi-account-outline"}
     ],
     valid: true,
+    message:"",
+    isValid: true,
     firstName: "",
     lastName: "",
     email: "",
+    isShow:false,
+    isRegister:"",
     password: "",
+    code:"",
     verify: "",
     loginPassword: "",
+    dataUser: "",
     loginEmail: "",
     loginEmailRules: [
       v => !!v || "Required",

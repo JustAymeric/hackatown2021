@@ -1,7 +1,6 @@
 <template>
   <div class="home">
      <button @click="click">Click here to start</button>
-    <router-view/>
   </div>
 </template>
 

@@ -1,7 +1,6 @@
 <template lang="">
     <div>
         sffasffafaFAFFSDFSDFDSDFSDFSFDS
-        
     </div>
 </template>
 <script>
