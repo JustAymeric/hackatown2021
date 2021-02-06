@@ -1,4 +1,4 @@
-# Citybounties [![](public/favicon.ico)](https://www.citybounties.ca/)
+# Citybounties [![](https://www.citybounties.ca/favicon.ico)](https://www.citybounties.ca/)
 This project is a submission to [Hackatown2021](https://hackatown-2021.devpost.com/) in the category:
 **Building the Economy of Tomorrow**
 
