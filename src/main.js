@@ -11,12 +11,12 @@ import { Auth } from '@aws-amplify/auth'
 
 Amplify.configure(awsconfig);
 
-Auth.configure(awsconfig)
 Vue.config.productionTip = false
-Vue.use(Vuelidate)
+
 new Vue({
   router,
   store,
   vuetify,
+  Vuelidate,
   render: h => h(App)
 }).$mount('#app')
