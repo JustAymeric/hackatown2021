@@ -1,5 +1,5 @@
 # Citybounties
-Introducing <https://www.citybounties.ca/>
+Introducing [citybounties.ca](https://www.citybounties.ca/)
 * A modern solution to urbain issues
 
 Made with:
