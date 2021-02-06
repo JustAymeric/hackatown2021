@@ -1,0 +1,35 @@
+{
+    "paths": [
+        {
+            "name": "/items",
+            "lambdaFunction": "hackatown20217728d052",
+            "privacy": {
+                "open": true
+            },
+            "policyResourceName": "/items"
+        }
+    ],
+    "resourceName": "hackatownapi",
+    "apiName": "hackatownapi",
+    "functionArns": [
+        {
+            "lambdaFunction": "hackatown20217728d052"
+        }
+    ],
+    "privacy": {
+        "auth": 0,
+        "unauth": 0,
+        "authRoleName": "amplify-amplify047c954e9c4a4-staging-213131-authRole",
+        "unAuthRoleName": "amplify-amplify047c954e9c4a4-staging-213131-unauthRole"
+    },
+    "dependsOn": [
+        {
+            "category": "function",
+            "resourceName": "hackatown20217728d052",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        }
+    ]
+}
