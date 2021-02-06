@@ -1,6 +1,10 @@
 # Citybounties
-Introducing [citybounties.ca](https://www.citybounties.ca/)
+This project is a submission to [Hackatown2021](https://hackatown-2021.devpost.com/) in the category:
+**Building the Economy of Tomorrow**
+
+## Introducing [citybounties.ca](https://www.citybounties.ca/)
 * A modern solution to urbain issues
+* A building block for smart cities
 
 Made with:
 * [Vue](https://vuejs.org/)
