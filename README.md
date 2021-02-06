@@ -6,6 +6,11 @@ This project is a submission to [Hackatown2021](https://hackatown-2021.devpost.c
 * A modern solution to urbain issues
 * A building block for smart cities
 
+## Inspiration
+
+## What it does
+
+## How we built it
 Made with:
 * [Vue](https://vuejs.org/)
 * [Vuetify](https://vuetifyjs.com/en/)
@@ -14,7 +19,14 @@ Made with:
 Includes technologies such as:
 * managed crytpocurrencies with [Amazon Quantum Ledger Database (QLDB)](https://aws.amazon.com/qldb/)
 
-Devpost: https://hackatown-2021.devpost.com/
+## Challenges we ran into
+
+## Accomplishments that we're proud of
+
+## What we learned
+
+## What's next for Citybounties
+
 ## Project setup
 ```
 npm install
