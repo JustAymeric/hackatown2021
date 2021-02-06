@@ -1,18 +1,17 @@
 <template>
-<v-app>
-    <welcome-page/>
+<div>
+    <router-link to="/">Home</router-link>
+    <router-link to="/about">About</router-link>
     <router-view/>
-</v-app>
+</div>
 </template>
 
 <script>
-import WelcomePage from './WelcomePage.vue';
 
 export default {
   name: 'App',
 
   components: {
-    WelcomePage
 
   },
 
