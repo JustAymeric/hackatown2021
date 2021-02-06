@@ -99,6 +99,7 @@ export default {
     cancel(){
         router.push({ name: "Home" });
     },
+    
     async register() {
       if (this.$refs.registerForm.validate()){
           try {
