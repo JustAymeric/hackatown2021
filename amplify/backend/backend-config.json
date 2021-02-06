@@ -1,0 +1,10 @@
+{
+  "auth": {
+    "hackatown2021f4ff1dc8": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false
+    }
+  }
+}
