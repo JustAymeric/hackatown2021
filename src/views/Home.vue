@@ -1,11 +1,16 @@
 <template>
   <v-content>
-    <v-carousel>
+    <v-carousel cycle hide-delimiter-background show-arrows-on-hover height="40vh">
       <v-carousel-item v-for="(color, i) in colors"
-                       :key="color" class="align-center justify-center">
-        <v-sheet :color="color" height="100%" tile>
-          <v-row class="fill-height align-center justify-center">
-            <div class="text-h2 text-center">{{ carousel_items[i] }}</div>
+                       :key="color">
+
+        <v-sheet :color="color" height="40vh">
+          <v-row class="fill-height" justify="center" align="center">
+            <div class="text-h2 white--text">{{
+                carousel_items[i]
+              }}
+            </div>
+
           </v-row>
         </v-sheet>
       </v-carousel-item>
