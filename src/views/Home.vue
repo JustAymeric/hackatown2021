@@ -1,20 +1,10 @@
 <template>
   <v-content>
-    <router-link class="router" to="/bounties">
-      <v-btn large block>Become a bounty hunter</v-btn>
-    </router-link>
+    <v-parallax class="parallax" src="https://cdn.vuetifyjs.com/images/parallax/material.jpg" height="100%">
 
-    <v-container>
-      <v-parallax src="https://cdn.vuetifyjs.com/images/parallax/material.jpg">
+
+      <v-container>
         <v-row class="text-center">
-          <v-col cols="12">
-            <v-img
-                :src="require('../assets/logo.svg')"
-                class="my-3"
-                contain
-                height="200"
-            />
-          </v-col>
           <v-col class="mb-4" fill-height>
             <v-row>
               <h1 class="display-3 font-weight-bold mb-3">
@@ -23,8 +13,7 @@
             </v-row>
             <v-row>
               <p class="title text-center font-weight-regular">
-                To draft polices
-                <br>
+                To draft polices<br>
                 To solve urban issues<br>
                 To optimize ressource management<br>
               </p>
@@ -68,14 +57,11 @@
                   <span class="subtitle-1">You find the reward on your account after a few minutes.</span></h4>
               </li>
             </ol>
-            <v-row>
-              <v-btn
-                  block
-                  color="primary"
-                  elevation="1"
-              >Become a bounty hunter
-              </v-btn>
-            </v-row>
+            <router-link class="router" to="/bounties">
+              <v-row>
+                <v-btn large block color="primary" elevation="1">Become a bounty hunter</v-btn>
+              </v-row>
+            </router-link>
             <v-row>
               <h4>How do rewards work then?<br></h4>
               <h5>All rewards are in the form of a city's own managed cryptocurrency.</h5>
@@ -126,16 +112,17 @@
 
 
         </v-row>
-      </v-parallax>
-    </v-container>
 
-    <router-link class="router" to="/about">
-      <v-card>
-        <v-tabs grow centered>
-          <v-tab>About</v-tab>
-        </v-tabs>
-      </v-card>
-    </router-link>
+      </v-container>
+
+      <router-link class="router" to="/about">
+        <v-card>
+          <v-tabs grow centered>
+            <v-tab>About</v-tab>
+          </v-tabs>
+        </v-card>
+      </router-link>
+    </v-parallax>
   </v-content>
 </template>
 
@@ -147,5 +134,8 @@ export default {
 <style>
 .router {
   text-decoration: none
+}
+.parallax{
+  position: absolute;
 }
 </style>
