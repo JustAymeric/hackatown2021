@@ -1,5 +1,6 @@
 <template>
   <v-content class="nav">
+    <input type="file" accept="image/*" capture="camera">
     <router-link to="/">
       <v-card flat color="secondary" class="rounded-0">
         <v-card-title>
