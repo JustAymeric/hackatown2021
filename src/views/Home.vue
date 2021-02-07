@@ -5,7 +5,7 @@
                        :key="color">
         <v-sheet :color="color" height="40vh">
           <v-row class="fill-height" justify="center" align="center" height="40vh">
-            <div class="display-3 white--text">{{
+            <div class="fill-height display-3 white--text">{{
                 carousel_items[i]
               }}
             </div>
@@ -184,7 +184,7 @@ export default {
   })
 }
 </script>
-<style>
+<style scoped>
 .router {
   text-decoration: none
 }
