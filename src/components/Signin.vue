@@ -65,6 +65,9 @@
 
                                             <v-form ref="validateCode" v-model="valid" lazy-validation v-if="!isValid">
                                     <v-row>
+                                         <v-col cols="12" sm="6" md="6">
+                                            <p>We sent you an email</p>
+                                        </v-col>
                                         <v-col cols="12" sm="6" md="6">
                                             <v-text-field v-model="code" label="Code" maxlength="20" required></v-text-field>
                                         </v-col>
@@ -98,7 +101,15 @@
 <script>
 import router from '../router'
 import { Auth } from 'aws-amplify';
+import {dataBase} from '../Firebase';
+import Vue from 'vue'
+import Vuex from 'vuex'
+Vue.use(Vuex)
+export const store = new Vuex.Store();
 export default {
+    components:{
+        
+    },
     computed: {
     passwordMatch() {
       return () => this.password === this.verify || "Password must match";
@@ -135,20 +146,32 @@ export default {
     async register() {
       if (this.$refs.registerForm.validate()){
           try {
-            const {dataUser}  =  await Auth.signUp({
+          await Auth.signUp({
                   username: this.email,
                   password: this.password,
                   attributes: {
                      email: this.email
                   },
                    response: { 
-              autoVerifyEmail: true
+                       autoVerifyEmail: true
               },
               });
-              this.dataUser = dataUser;
-              console.log(this.dataUser);
-              //alert('User successfully registered.');
-              this.isValid=false;
+                this.isValid=false;
+                this.changeEmail();
+              dataBase.collection("Citizens").doc().set({
+                Firstname: this.firstName,
+                Lastname: this.lastName,
+                email: this.email,
+                wallet:0,  
+            })
+            .then(() => {
+                console.log("Document successfully written!");
+                router.push({ name: "BountyCard" });
+            })
+            .catch((error) => {
+                console.error("Error writing document: ", error);
+            });
+
           } catch (error) {
               this.message = error.message;
                this.isShow = true;
@@ -158,12 +181,16 @@ export default {
       async submit() {
           try {
             await Auth.confirmSignUp(this.email, this.code);
+            this.changeEmail();
             router.push({ name: "BountyCard" });
           } catch (error) {
              this.message = error.message;
              this.isShow = true;
           }
       },
+      changeEmail(){
+          this.$store.dispatch('change',this.email);
+      }
 
   },
   data: () => ({
@@ -200,7 +227,7 @@ export default {
     rules: {
       required: value => !!value || "Required.",
       min: v => (v && v.length >= 8) || "Min 8 characters"
-    }
+    },
   })
 }
 </script>

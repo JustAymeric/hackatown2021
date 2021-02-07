@@ -1,6 +1,6 @@
 <template>
   <v-content>
-    <router-link class="router" to="/bounties">
+    <router-link class="router" to="/signin">
       <v-btn large block>Become a bounty hunter</v-btn>
     </router-link>
 
