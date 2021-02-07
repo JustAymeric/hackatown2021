@@ -1,10 +1,9 @@
 <template>
-  <v-content>
+  <v-content class="nav">
     <router-link to="/">
-      <v-card flat>
+      <v-card flat color="secondary" hover>
         <v-card-title>
-
-          <v-img src="../assets/logo.png" height="10vh" contain="true"></v-img>
+          <v-img src="../assets/logo.png" height="10vh" :contain="true"></v-img>
         </v-card-title>
       </v-card>
     </router-link>
@@ -18,5 +17,6 @@ export default {
 </script>
 
 <style scoped>
-
+.nav {
+}
 </style>
