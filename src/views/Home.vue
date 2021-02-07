@@ -100,35 +100,32 @@
       </router-link>
     </v-card>
 
-    <div class="mt-10 text-h4">FAQ</div>
-    <v-expansion-panel class="mt-10">
-      <v-expansion-panel-header>
-      </v-expansion-panel-header>
-      <v-expansion-panel-content>
+    <div class="mt-10 text-h3 text-center">FAQ</div>
+    <v-expansion-panels focusable class="mt-2">
 
-      </v-expansion-panel-content>
-    </v-expansion-panel>
-    <v-row>
-      <h4>How do rewards work then?<br></h4>
-      <h5>All rewards are in the form of a city's own managed cryptocurrency.</h5>
-    </v-row>
-    <v-row class="text-left">
-      <h4>How do rewards work then?<br></h4>
-      <ul text-left class="display-6">
-        <li>
-          Municipal tax deductions
-        </li>
-        <li>
-          Public transit fares
-        </li>
-        <li>
-          Parking
-        </li>
-      </ul>
-    </v-row>
-    <v-expansion-panels focusable>
       <v-expansion-panel>
-        <v-expansion-panel-header class="text-weight-bold">Wouldn't cities lose money with these rewards?
+        <v-expansion-panel-header>
+          What kind of rewards are provided?
+        </v-expansion-panel-header>
+        <v-expansion-panel-content>
+          All rewards are in the form of a city's own managed cryptocurrency.
+        </v-expansion-panel-content>
+      </v-expansion-panel>
+      <v-expansion-panel>
+        <v-expansion-panel-header>
+          What can you do with a city's cryptocurrency?
+        </v-expansion-panel-header>
+        <v-expansion-panel-content>
+          <ul>
+            <li>Municipal tax deductions</li>
+            <li>Public transit fares</li>
+            <li>Parking meters</li>
+          </ul>
+        </v-expansion-panel-content>
+      </v-expansion-panel>
+      <v-expansion-panel>
+        <v-expansion-panel-header>
+          Wouldn't cities lose money by providing rewards?
         </v-expansion-panel-header>
         <v-expansion-panel-content>
           Data analytics create massive savings for cities and utilities.<br>
@@ -136,7 +133,8 @@
         </v-expansion-panel-content>
       </v-expansion-panel>
       <v-expansion-panel>
-        <v-expansion-panel-header class="text-weight-bold">Who controls the pricing on bounties?
+        <v-expansion-panel-header>
+          Who controls the pricing on bounties?
         </v-expansion-panel-header>
         <v-expansion-panel-content>A city controls the pricing of its bounties. Therefore, it balances the
           price for acquiring data and the incentive for citizens to participate.<br>
@@ -145,7 +143,7 @@
         </v-expansion-panel-content>
       </v-expansion-panel>
       <v-expansion-panel>
-        <v-expansion-panel-header class="text-weight-bold">How long do bounties last?
+        <v-expansion-panel-header>How long do bounties last?
         </v-expansion-panel-header>
         <v-expansion-panel-content>Bounties can be ended at any time. They may also last as long as data is
           needed. They usually have a fixed time window.
@@ -154,8 +152,10 @@
     </v-expansion-panels>
     <router-link class="router" to="/about">
       <v-card>
-        <v-tabs grow centered>
-          <v-tab>About</v-tab>
+        <v-tabs grow centered color="secondary">
+          <v-tab>
+            <div class="text-h3 ">About</div>
+          </v-tab>
         </v-tabs>
       </v-card>
     </router-link>
@@ -184,9 +184,5 @@ export default {
 <style>
 .router {
   text-decoration: none
-}
-
-.parallax {
-  position: absolute;
 }
 </style>
