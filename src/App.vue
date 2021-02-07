@@ -1,24 +1,20 @@
 <template>
-<v-app>
-    <welcome-page/>
+  <v-app>
+    <Navbar></Navbar>
     <router-view/>
-</v-app>
+  </v-app>
 </template>
 
 <script>
-import WelcomePage from './WelcomePage.vue';
+import Navbar from "@/components/Navbar";
 
 export default {
   name: 'App',
 
   components: {
-    WelcomePage
+    Navbar,
 
   },
-
-  data: () => ({
-    //
-  }),
 };
 </script>
 
