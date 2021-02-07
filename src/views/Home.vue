@@ -3,10 +3,9 @@
     <v-carousel cycle hide-delimiter-background show-arrows-on-hover height="40vh">
       <v-carousel-item v-for="(color, i) in colors"
                        :key="color">
-
         <v-sheet :color="color" height="40vh">
-          <v-row class="fill-height" justify="center" align="center">
-            <div class="text-h2 white--text">{{
+          <v-row class="fill-height" justify="center" align="center" height="40vh">
+            <div class="display-3 white--text">{{
                 carousel_items[i]
               }}
             </div>
