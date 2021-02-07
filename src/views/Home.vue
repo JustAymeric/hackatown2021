@@ -5,7 +5,7 @@
                        :key="color">
         <v-sheet :color="color" height="40vh">
           <v-row class="fill-height" justify="center" align="center" height="40vh">
-            <div class="fill-height display-3 white--text">{{
+            <div class="display-3 white--text ma-10">{{
                 carousel_items[i]
               }}
             </div>
