@@ -2,9 +2,9 @@
   <v-content>
     <v-carousel>
       <v-carousel-item v-for="(color, i) in colors"
-                       :key="color">
+                       :key="color" class="align-center justify-center">
         <v-sheet :color="color" height="100%" tile>
-          <v-row class="fill-height" align="center" justify="center">
+          <v-row class="fill-height align-center justify-center">
             <div class="text-h2 text-center">{{ carousel_items[i] }}</div>
           </v-row>
         </v-sheet>

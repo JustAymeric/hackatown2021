@@ -1,7 +1,7 @@
 <template>
   <v-content class="nav">
     <router-link to="/">
-      <v-card flat color="secondary" hover>
+      <v-card flat color="secondary" class="rounded-0">
         <v-card-title>
           <v-img src="../assets/logo.png" height="10vh" :contain="true"></v-img>
         </v-card-title>
