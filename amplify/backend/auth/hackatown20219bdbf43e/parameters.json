@@ -1,8 +1,8 @@
 {
-    "identityPoolName": "hackatown2021f4ff1dc8_identitypool_f4ff1dc8",
+    "identityPoolName": "hackatown20219bdbf43e_identitypool_9bdbf43e",
     "allowUnauthenticatedIdentities": false,
-    "resourceNameTruncated": "hackatf4ff1dc8",
-    "userPoolName": "hackatown2021f4ff1dc8_userpool_f4ff1dc8",
+    "resourceNameTruncated": "hackat9bdbf43e",
+    "userPoolName": "hackatown20219bdbf43e_userpool_9bdbf43e",
     "autoVerifiedAttributes": [
         "email"
     ],
@@ -28,10 +28,10 @@
     "userpoolClientReadAttributes": [
         "email"
     ],
-    "userpoolClientLambdaRole": "hackatf4ff1dc8_userpoolclient_lambda_role",
+    "userpoolClientLambdaRole": "hackat9bdbf43e_userpoolclient_lambda_role",
     "userpoolClientSetAttributes": false,
-    "sharedId": "f4ff1dc8",
-    "resourceName": "hackatown2021f4ff1dc8",
+    "sharedId": "9bdbf43e",
+    "resourceName": "hackatown20219bdbf43e",
     "authSelections": "identityPoolAndUserPool",
     "authRoleArn": {
         "Fn::GetAtt": [
@@ -45,17 +45,12 @@
             "Arn"
         ]
     },
-    "useDefault": "defaultSocial",
-    "hostedUI": true,
-    "usernameAttributes": [
-        "email"
-    ],
-    "hostedUIDomainName": "hackatown2021f4ff1dc8-f4ff1dc8",
-    "authProvidersUserPool": [],
-    "hostedUIProviderMeta": "[]",
-    "oAuthMetadata": "{\"AllowedOAuthFlows\":[\"code\"],\"AllowedOAuthScopes\":[\"phone\",\"email\",\"openid\",\"profile\",\"aws.cognito.signin.user.admin\"],\"CallbackURLs\":[\"https://main.d2nenxzglwrcm6.amplifyapp.com/#/\"],\"LogoutURLs\":[\"https://main.d2nenxzglwrcm6.amplifyapp.com/#/\"]}",
+    "useDefault": "default",
     "userPoolGroupList": [],
     "serviceName": "Cognito",
     "usernameCaseSensitive": false,
-    "dependsOn": []
+    "dependsOn": [],
+    "userPoolGroups": false,
+    "adminQueries": false,
+    "hostedUI": false
 }
