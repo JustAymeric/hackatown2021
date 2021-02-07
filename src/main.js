@@ -1,16 +1,16 @@
-import Vue from 'vue'
-import App from './App.vue'
-import router from './router'
-import store from './store'
-import vuetify from './plugins/vuetify';
+import Vue from "vue";
+import App from "./App.vue";
+import router from "./router";
+import store from "./store";
+import vuetify from "./plugins/vuetify";
 import "@aws-amplify/ui-vue";
 import Amplify from "aws-amplify";
 import awsconfig from "./aws-exports";
-import Vuelidate from 'vuelidate'
+import Vuelidate from "vuelidate";
 
 Amplify.configure(awsconfig);
 
-Vue.config.productionTip = false
+Vue.config.productionTip = false;
 Vue.use(Vuelidate);
 
 new Vue({
@@ -18,4 +18,4 @@ new Vue({
   store,
   vuetify,
   render: h => h(App)
-}).$mount('#app')
+}).$mount("#app");
