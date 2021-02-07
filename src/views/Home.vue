@@ -1,11 +1,11 @@
 <template>
   <v-content>
-    <v-carousel cycle hide-delimiter-background show-arrows-on-hover height="40vh">
+    <v-carousel cycle hide-delimiter-background show-arrows-on-hover height="20vh">
       <v-carousel-item v-for="(color, i) in colors"
                        :key="color">
         <v-sheet :color="color" height="40vh">
-          <v-row class="fill-height" justify="center" align="center" height="40vh">
-            <div class="display-3 white--text">{{
+          <v-row class="fill-height" justify="center" align="center" height="20vh">
+            <div class="display-3 white--text mt-10">{{
                 carousel_items[i]
               }}
             </div>
