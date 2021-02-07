@@ -7,7 +7,7 @@
           cols="12"
       >
         <v-card
-            :color="bounty.color"
+            color="primary"
             dark
             outlined
         >
@@ -15,12 +15,12 @@
             <div>
               <v-card-title
                   class="headline"
-                  v-text="bounty.title"
+                  v-text=bounty.data.name
               ></v-card-title>
 
 
-              <v-card-subtitle v-text="bounty.category">Category:</v-card-subtitle>
-              <v-card-subtitle v-text="bounty.contributers">Number of contributers:</v-card-subtitle>
+              <v-card-subtitle>Description: {{bounty.data.description}}</v-card-subtitle>
+              <v-card-subtitle >Price: {{bounty.data.price}}</v-card-subtitle>
               <v-card-text>
                 <v-container>
                   <v-row>
@@ -28,14 +28,13 @@
                            sm="6"
                            class="d-flex align center"
                     >
-                      <div>
-                        class="text-center"
-                        v-text="bounty.status"
-                      </div>
+                      <div
+                          class="text-center"
+                      ></div>
                       <v-spacer></v-spacer>
-                      <div>
-                        class="text-center"
-                        v-text="bounty.price"
+                      <div
+                          class=""
+                      >
                       </div>
                     </v-col>
                   </v-row>
@@ -47,39 +46,19 @@
 
           </div>
         </v-card>
-        </v-col>
+      </v-col>
     </v-list>
-    <v-bottom-navigation
-        :value="value"
-        color="teal"
-        grow
-    >
-      <v-btn>
-        <span>My bounties</span>
 
-        <v-icon>mdi-sack</v-icon>
-      </v-btn>
 
-      <v-btn>
-        <span>Camera</span>
-
-        <v-icon>mdi-camera</v-icon>
-      </v-btn>
-
-      <v-btn>
-        <span>Profile</span>
-
-        <v-icon>mdi-account</v-icon>
-      </v-btn>
-    </v-bottom-navigation>
   </v-content>
 </template>
 
 <script>
 export default {
   name: "Bounties",
-  data: () => {
-  }
+
+  props:['bounties'],
+
 }
 </script>
 
