@@ -1,20 +1,17 @@
 <template>
-  <!-- <v-app>
+  <v-app>
     <Navbar></Navbar>
     <router-view/>
-  </v-app> -->
-  <BountyCard/>
+  </v-app>
 </template>
 
 <script>
-//import Navbar from "@/components/Navbar";
-import BountyCard from "@/components/BountyCard.vue";
+import Navbar from "@/components/Navbar";
 export default {
   name: 'App',
 
   components: {
-   // Navbar,
-   BountyCard,
+    Navbar,
 
   },
 };
