@@ -49,37 +49,17 @@
         </v-card>
         </v-col>
     </v-list>
-    <v-bottom-navigation
-        :value="value"
-        color="teal"
-        grow
-    >
-      <v-btn>
-        <span>My bounties</span>
-
-        <v-icon>mdi-sack</v-icon>
-      </v-btn>
-
-      <v-btn>
-        <span>Camera</span>
-
-        <v-icon>mdi-camera</v-icon>
-      </v-btn>
-
-      <v-btn>
-        <span>Profile</span>
-
-        <v-icon>mdi-account</v-icon>
-      </v-btn>
-    </v-bottom-navigation>
+    
+   
   </v-content>
 </template>
 
 <script>
 export default {
   name: "Bounties",
-  data: () => {
-  }
+  data: () => ({
+    bounties:[1,2,3,4,5,6,7]
+  })
 }
 </script>
 

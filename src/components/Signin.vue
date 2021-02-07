@@ -109,7 +109,7 @@ export default {
         if (this.$refs.loginForm.validate()) {
              try {
                 await Auth.signIn(this.loginEmail, this.loginPassword);
-                router.push({ name: "Body" });
+                router.push({ name: "BountyCard" });
 
     } catch (error) {
        this.message = error.message;
@@ -158,7 +158,7 @@ export default {
       async submit() {
           try {
             await Auth.confirmSignUp(this.email, this.code);
-            router.push({ name: "Body" });
+            router.push({ name: "BountyCard" });
           } catch (error) {
              this.message = error.message;
              this.isShow = true;
