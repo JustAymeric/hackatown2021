@@ -19,7 +19,6 @@
         <div class="text-h2 text-center">Better data means</div>
       </v-card-title>
       <div class="align-center justify-center">
-
         <div class="text-h5 text--secondary text-center">Reducing project delays</div>
         <div class="text-h5 text--secondary text-center">Minimizing public expenses</div>
         <div class="text-h5 text--secondary text-center">Lowering carbon emissions</div>

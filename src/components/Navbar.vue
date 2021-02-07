@@ -1,14 +1,9 @@
 <template>
-  <v-content class="nav">
-    <input type="file" accept="image/*" capture="camera">
-    <router-link to="/">
-      <v-card flat color="secondary" class="rounded-0">
-        <v-card-title>
-          <v-img src="../assets/logo.png" height="10vh" :contain="true"></v-img>
-        </v-card-title>
-      </v-card>
-    </router-link>
-  </v-content>
+  <router-link to="/">
+      <div class="secondary align-center justify-center pa-3">
+        <v-img src="../assets/logo.png" height="14vh" :contain="true"></v-img>
+      </div>
+  </router-link>
 </template>
 
 <script>
@@ -18,6 +13,4 @@ export default {
 </script>
 
 <style scoped>
-.nav {
-}
 </style>
