@@ -1,8 +1,8 @@
 <template>
   <router-link to="/">
-      <div class="secondary align-center justify-center pa-3">
-        <v-img src="../assets/logo.png" height="14vh" :contain="true"></v-img>
-      </div>
+    <v-card height="20vh" flat class="secondary rounded-0 align-center justify-center pa-3">
+      <v-img src="../assets/logo.png" height="100%" :contain="true"></v-img>
+    </v-card>
   </router-link>
 </template>
 
