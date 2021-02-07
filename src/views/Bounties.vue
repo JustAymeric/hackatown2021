@@ -7,7 +7,7 @@
           cols="12"
       >
         <v-card
-            :color="bounty.color"
+           color="primary"
             dark
             outlined
         >
@@ -15,12 +15,12 @@
             <div>
               <v-card-title
                   class="headline"
-                  v-text="bounty.title"
+                  v-text=bounty.data.name
               ></v-card-title>
 
 
-              <v-card-subtitle v-text="bounty.category">Category:</v-card-subtitle>
-              <v-card-subtitle v-text="bounty.contributers">Number of contributers:</v-card-subtitle>
+              <v-card-subtitle>Description: {{bounty.data.description}}</v-card-subtitle>
+              <v-card-subtitle >Price: {{bounty.data.price}}</v-card-subtitle>
               <v-card-text>
                 <v-container>
                   <v-row>
@@ -28,14 +28,13 @@
                            sm="6"
                            class="d-flex align center"
                     >
-                      <div>
+                      <div
                         class="text-center"
-                        v-text="bounty.status"
-                      </div>
+                      ></div>
                       <v-spacer></v-spacer>
-                      <div>
-                        class="text-center"
-                        v-text="bounty.price"
+                      <div
+                        class=""
+                        >
                       </div>
                     </v-col>
                   </v-row>
@@ -57,9 +56,9 @@
 <script>
 export default {
   name: "Bounties",
-  data: () => ({
-    bounties:[1,2,3,4,5,6,7]
-  })
+ 
+    props:['bounties'],
+
 }
 </script>
 

@@ -1,26 +1,27 @@
 <template>
     <div>
          <v-bottom-navigation
-        :value="value"
+        class=' mx-auto'
         color="teal"
         grow
-        height="40"
-        max-width="500"
+        height="50"
         fixed
+        block
+        max-width="700"
     >
-      <v-btn>
+      <v-btn x-large>
         <span>My bounties</span>
 
         <v-icon>mdi-sack</v-icon>
       </v-btn>
 
-      <v-btn>
+      <v-btn x-large>
         <span>Camera</span>
 
         <v-icon>mdi-camera</v-icon>
       </v-btn>
 
-      <v-btn>
+      <v-btn x-large>
         <span>Profile</span>
 
         <v-icon>mdi-account</v-icon>
